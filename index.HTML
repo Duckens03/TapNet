@@ -67,22 +67,6 @@
             animation: gradient-x 15s ease infinite;
         }
 
-        .animate-spin {
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .animate-fadeIn {
-            animation: fadeIn 0.5s ease-out forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         /* Glassmorphism Utilities */
         .glass {
             background: rgba(0, 0, 0, 0.7);
@@ -109,11 +93,6 @@
         .hidden {
             display: none;
         }
-        
-        /* Markdown-like spacing for AI result */
-        .prose p {
-            margin-bottom: 0.5em;
-        }
     </style>
 </head>
 <body class="antialiased min-h-screen">
@@ -131,7 +110,6 @@
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8">
                 <a href="#features" class="text-neutral-300 hover:text-white transition-colors text-sm font-medium" data-i18n="nav.features">Features</a>
-                <a href="#ai-tools" class="text-neutral-300 hover:text-white transition-colors text-sm font-medium" data-i18n="nav.ai">AI Tools</a>
                 <a href="#how-it-works" class="text-neutral-300 hover:text-white transition-colors text-sm font-medium" data-i18n="nav.how">How it Works</a>
                 <a href="#pricing" class="text-neutral-300 hover:text-white transition-colors text-sm font-medium" data-i18n="nav.pricing">Pricing</a>
                 
@@ -141,9 +119,9 @@
                     <span id="current-lang">EN</span>
                 </button>
 
-                <button class="px-5 py-2 rounded-full bg-cyan-500 text-black font-bold hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] text-sm" data-i18n="nav.get">
+                <a href="https://forms.gle/N7Qt6xrmJpdGLU167" target="_blank" class="px-5 py-2 rounded-full bg-cyan-500 text-black font-bold hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] text-sm" data-i18n="nav.get">
                     Get Your Card
-                </button>
+                </a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -155,13 +133,12 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full glass border-t border-neutral-800 p-6 flex flex-col gap-4">
             <a href="#features" class="text-neutral-300 hover:text-cyan-400" data-i18n="nav.features">Features</a>
-            <a href="#ai-tools" class="text-neutral-300 hover:text-cyan-400" data-i18n="nav.ai">AI Tools</a>
             <a href="#how-it-works" class="text-neutral-300 hover:text-cyan-400" data-i18n="nav.how">How it Works</a>
             <a href="#pricing" class="text-neutral-300 hover:text-cyan-400" data-i18n="nav.pricing">Pricing</a>
             <button id="mobile-lang-toggle" class="flex items-center gap-2 text-neutral-300 hover:text-white text-left">
                 <i data-lucide="languages" class="w-4 h-4"></i> <span id="mobile-lang-text">Switch to Traditional Chinese</span>
             </button>
-            <button class="w-full py-3 rounded-lg bg-cyan-500 text-black font-bold" data-i18n="nav.get">Get Your Card</button>
+            <a href="https://forms.gle/N7Qt6xrmJpdGLU167" target="_blank" class="block text-center w-full py-3 rounded-lg bg-cyan-500 text-black font-bold" data-i18n="nav.get">Get Your Card</a>
         </div>
     </nav>
 
@@ -188,9 +165,9 @@
                     Stop wasting paper. Share your contact info, socials, and portfolio with a single tap. No app required for the receiver.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <button class="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(6,182,212,0.4)] transition-all transform hover:-translate-y-1" data-i18n="hero.btn_primary">
+                    <a href="https://forms.gle/N7Qt6xrmJpdGLU167" target="_blank" class="inline-block text-center px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(6,182,212,0.4)] transition-all transform hover:-translate-y-1" data-i18n="hero.btn_primary">
                         Create Your Card
-                    </button>
+                    </a>
                     <button class="px-8 py-4 rounded-full glass border border-white/10 text-white font-bold text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-2">
                         <i data-lucide="play" class="w-3 h-3 fill-current"></i> <span data-i18n="hero.btn_secondary">Watch Demo</span>
                     </button>
@@ -217,7 +194,7 @@
                             </div>
                             <div class="text-right">
                                 <h3 class="text-white font-bold text-lg">Duckens Belval</h3>
-                                <p class="text-cyan-400 text-xs tracking-widest uppercase" data-i18n="hero.card.role">CEO & Founder</p>
+                                <p class="text-cyan-400 text-xs tracking-widest" data-i18n="hero.card.role">Co-founder & Chairman</p>
                             </div>
                             <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay"></div>
                         </div>
@@ -286,105 +263,6 @@
         </div>
     </section>
 
-    <!-- AI Tools -->
-    <section id="ai-tools" class="py-24 relative bg-[#020617]">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] -z-10"></div>
-        
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 max-w-2xl mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">
-                    <span data-i18n="ai.title_prefix">Your Personal</span> 
-                    <span class="text-purple-400" data-i18n="ai.title_highlight">AI Wingman</span>
-                </h2>
-                <p class="text-neutral-400 text-lg" data-i18n="ai.sub">
-                    TapNet doesn't just share your info; it helps you build it. Try our AI tools to craft the perfect profile or start a conversation.
-                </p>
-            </div>
-
-            <div class="max-w-4xl mx-auto glass rounded-3xl overflow-hidden border border-purple-500/20 flex flex-col md:flex-row min-h-[500px]">
-                <!-- Sidebar / Tabs -->
-                <div class="w-full md:w-1/3 bg-black/40 p-6 flex flex-col gap-2 border-r border-white/5">
-                    <button id="tab-bio" class="p-4 rounded-xl text-left transition-all flex items-center gap-3 bg-purple-600 text-white shadow-lg shadow-purple-900/50">
-                        <i data-lucide="pen-tool" class="w-5 h-5"></i>
-                        <div>
-                            <h4 class="font-bold" data-i18n="ai.magic_bio">Magic Bio</h4>
-                            <p class="text-xs opacity-70" data-i18n="ai.magic_bio_sub">Perfect your intro</p>
-                        </div>
-                    </button>
-                    <button id="tab-icebreaker" class="p-4 rounded-xl text-left transition-all flex items-center gap-3 text-neutral-400 hover:bg-white/5">
-                        <i data-lucide="message-square" class="w-5 h-5"></i>
-                        <div>
-                            <h4 class="font-bold" data-i18n="ai.icebreaker">Icebreaker</h4>
-                            <p class="text-xs opacity-70" data-i18n="ai.icebreaker_sub">Never get stuck</p>
-                        </div>
-                    </button>
-                </div>
-
-                <!-- Content Area -->
-                <div class="w-full md:w-2/3 p-8 relative bg-black/20">
-                    <!-- Bio Content -->
-                    <div id="content-bio" class="space-y-6 animate-fadeIn">
-                        <h3 class="text-2xl font-bold text-white flex items-center gap-2">
-                            <i data-lucide="cpu" class="text-purple-400 w-6 h-6"></i> <span data-i18n="ai.bio_title">Generate Your Bio</span>
-                        </h3>
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-sm text-neutral-400 mb-2" data-i18n="ai.job_label">Job Title</label>
-                                <input type="text" id="bio-job" placeholder="e.g. UX Designer, Real Estate Agent" class="w-full bg-black/50 border border-neutral-800 rounded-lg p-3 text-white focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all placeholder:text-neutral-600">
-                            </div>
-                            <div>
-                                <label class="block text-sm text-neutral-400 mb-2" data-i18n="ai.ind_label">Industry</label>
-                                <input type="text" id="bio-industry" placeholder="e.g. Fintech, Luxury Housing" class="w-full bg-black/50 border border-neutral-800 rounded-lg p-3 text-white focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 transition-all placeholder:text-neutral-600">
-                            </div>
-                            <div>
-                                <label class="block text-sm text-neutral-400 mb-2" data-i18n="ai.vibe_label">Vibe</label>
-                                <div class="flex gap-2" id="bio-vibe-container">
-                                    <button class="vibe-btn px-4 py-2 rounded-lg text-sm border bg-purple-500/20 border-purple-500 text-purple-300" data-value="professional" data-i18n="ai.vibes.professional">Professional</button>
-                                    <button class="vibe-btn px-4 py-2 rounded-lg text-sm border border-neutral-800 text-neutral-500 hover:border-neutral-600" data-value="witty" data-i18n="ai.vibes.witty">Witty</button>
-                                    <button class="vibe-btn px-4 py-2 rounded-lg text-sm border border-neutral-800 text-neutral-500 hover:border-neutral-600" data-value="casual" data-i18n="ai.vibes.casual">Casual</button>
-                                </div>
-                            </div>
-                            <button id="btn-generate-bio" class="w-full py-3 mt-4 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 font-bold text-white hover:shadow-[0_0_20px_rgba(147,51,234,0.4)] transition-all flex justify-center items-center gap-2">
-                                <span data-i18n="ai.btn_bio">Generate Bio ✨</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Icebreaker Content -->
-                    <div id="content-icebreaker" class="space-y-6 animate-fadeIn hidden">
-                        <h3 class="text-2xl font-bold text-white flex items-center gap-2">
-                            <i data-lucide="cpu" class="text-cyan-400 w-6 h-6"></i> <span data-i18n="ai.ice_title">Networking Wingman</span>
-                        </h3>
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-sm text-neutral-400 mb-2" data-i18n="ai.event_label">Event Type</label>
-                                <input type="text" id="ice-event" placeholder="e.g. Tech Conference, Cocktail Party" class="w-full bg-black/50 border border-neutral-800 rounded-lg p-3 text-white focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all placeholder:text-neutral-600">
-                            </div>
-                            <div>
-                                <label class="block text-sm text-neutral-400 mb-2" data-i18n="ai.target_label">Who do you want to talk to?</label>
-                                <input type="text" id="ice-target" placeholder="e.g. Potential Investor, Developer" class="w-full bg-black/50 border border-neutral-800 rounded-lg p-3 text-white focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all placeholder:text-neutral-600">
-                            </div>
-                            <button id="btn-generate-ice" class="w-full py-3 mt-4 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 font-bold text-white hover:shadow-[0_0_20px_rgba(8,145,178,0.4)] transition-all flex justify-center items-center gap-2">
-                                <span data-i18n="ai.btn_ice">Get Suggestions ✨</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Result Display -->
-                    <div id="ai-result-container" class="hidden mt-6 p-4 rounded-xl bg-black/60 border border-white/10 animate-float relative group">
-                        <h4 class="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-2" data-i18n="ai.result_label">AI Generated Result</h4>
-                        <div class="prose prose-invert prose-sm">
-                            <p id="ai-result-text" class="whitespace-pre-wrap leading-relaxed text-neutral-200"></p>
-                        </div>
-                        <button id="copy-btn" class="absolute top-4 right-4 p-2 rounded-lg bg-black/50 text-neutral-400 hover:text-white opacity-0 group-hover:opacity-100 transition-opacity" title="Copy to clipboard">
-                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- How it Works -->
     <section id="how-it-works" class="py-24 bg-[#050505]">
         <div class="container mx-auto px-6">
@@ -421,7 +299,7 @@
                                     <div class="h-6 bg-neutral-800 w-full mb-2"></div>
                                     <div class="h-2 bg-neutral-800 w-2/3 mx-auto mb-2 rounded"></div>
                                     <div class="h-16 w-16 bg-neutral-700 rounded-full mx-auto mb-2"></div>
-                                    <div class="h-8 bg-cyan-600 rounded mx-4 flex items-center justify-center text-[8px] text-white" data-i18n="hero.card.save">0966161393</div>
+                                    <div class="h-8 bg-cyan-600 rounded mx-4 flex items-center justify-center text-[8px] text-white" data-i18n="how.view_profile">Profile</div>
                                 </div>
                                 <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-4 bg-neutral-800 rounded-b-lg"></div>
                             </div>
@@ -450,12 +328,12 @@
                     Join thousands of professionals who have switched to TapNet. Get your card today and never print another business card again.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button class="px-10 py-4 rounded-full bg-cyan-500 text-black font-bold text-lg hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:scale-105 flex items-center justify-center gap-2" data-i18n="cta.btn_buy">
+                    <a href="https://forms.gle/N7Qt6xrmJpdGLU167" target="_blank" class="px-10 py-4 rounded-full bg-cyan-500 text-black font-bold text-lg hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:scale-105 flex items-center justify-center gap-2" data-i18n="cta.btn_buy">
                         Buy Now - $49.99
-                    </button>
-                    <button class="px-10 py-4 rounded-full border border-neutral-600 hover:bg-neutral-800 text-white font-bold text-lg transition-all" data-i18n="cta.btn_contact">
+                    </a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=belvalduckens@gmail.com" target="_blank" class="px-10 py-4 rounded-full border border-neutral-600 hover:bg-neutral-800 text-white font-bold text-lg transition-all flex items-center justify-center" data-i18n="cta.btn_contact">
                         Contact Sales
-                    </button>
+                    </a>
                 </div>
                 <p class="mt-6 text-sm text-neutral-500" data-i18n="cta.footer_text">Free shipping worldwide • 30-day money back guarantee</p>
             </div>
@@ -500,8 +378,8 @@
                 <p data-i18n="footer.rights">© 2024 TapNet Technologies Inc. All rights reserved.</p>
                 <div class="flex gap-6 mt-4 md:mt-0">
                     <a href="#" class="hover:text-white"><i data-lucide="twitter" class="w-5 h-5"></i></a>
-                    <a href="#" class="hover:text-white"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                    <a href="#" class="hover:text-white"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="https://www.instagram.com/_duckens_b?igsh=MWNybzFpcDJ4bHY0" target="_blank" class="hover:text-white"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="https://www.linkedin.com/in/duckens-belval-2a7890398" target="_blank" class="hover:text-white"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
                 </div>
             </div>
         </div>
@@ -511,7 +389,7 @@
         // --- Translations ---
         const translations = {
             en: {
-                nav: { features: "Features", ai: "AI Tools", how: "How it Works", pricing: "Pricing", get: "Get Your Card" },
+                nav: { features: "Features", how: "How it Works", pricing: "Pricing", get: "Get Your Card" },
                 hero: {
                     tag: "The Future of Networking is Here",
                     h1_prefix: "Connect at the",
@@ -520,7 +398,7 @@
                     btn_primary: "Create Your Card",
                     btn_secondary: "Watch Demo",
                     trusted: "Trusted by 10,000+ Professionals",
-                    card: { role: "CEO & Founder", linkedin: "Connect on LinkedIn", instagram: "@_duckens_b", save: "0966161393", add: "Mobile", powered: "Powered by TapNet" }
+                    card: { role: "Co-founder & Chairman", linkedin: "Connect on LinkedIn", instagram: "@_duckens_b", save: "0966161393", add: "Mobile", powered: "Powered by TapNet" }
                 },
                 features: {
                     title_prefix: "More Than Just a",
@@ -535,26 +413,6 @@
                         { title: "Custom Design", desc: "Fully customizable profiles and card designs to match your brand identity perfectly.", icon: "pen-tool" }
                     ]
                 },
-                ai: {
-                    title_prefix: "Your Personal",
-                    title_highlight: "AI Wingman",
-                    sub: "TapNet doesn't just share your info; it helps you build it. Try our AI tools to craft the perfect profile or start a conversation.",
-                    magic_bio: "Magic Bio",
-                    magic_bio_sub: "Perfect your intro",
-                    icebreaker: "Icebreaker",
-                    icebreaker_sub: "Never get stuck",
-                    bio_title: "Generate Your Bio",
-                    job_label: "Job Title",
-                    ind_label: "Industry",
-                    vibe_label: "Vibe",
-                    vibes: { professional: "Professional", witty: "Witty", casual: "Casual" },
-                    btn_bio: "Generate Bio ✨",
-                    ice_title: "Networking Wingman",
-                    event_label: "Event Type",
-                    target_label: "Who do you want to talk to?",
-                    btn_ice: "Get Suggestions ✨",
-                    result_label: "AI Generated Result"
-                },
                 how: {
                     title_prefix: "Effortless",
                     title_highlight: "Networking",
@@ -563,7 +421,8 @@
                         { title: "Activate Your Card", desc: "Tap your card to your phone to link it instantly to your new profile." },
                         { title: "Tap & Share", desc: "Start networking. Tap your card on any smartphone to share your details instantly." }
                     ],
-                    card_status: "Status: Connected Successfully"
+                    card_status: "Status: Connected Successfully",
+                    view_profile: "Profile"
                 },
                 cta: {
                     title_prefix: "Ready to",
@@ -582,7 +441,7 @@
                 }
             },
             zh: {
-                nav: { features: "功能特色", ai: "AI 工具", how: "運作方式", pricing: "價格方案", get: "購買卡片" },
+                nav: { features: "功能特色", how: "運作方式", pricing: "價格方案", get: "購買卡片" },
                 hero: {
                     tag: "未來的社交方式就在這裡",
                     h1_prefix: "以光速建立",
@@ -591,7 +450,7 @@
                     btn_primary: "建立您的卡片",
                     btn_secondary: "觀看演示",
                     trusted: "獲得 10,000+ 位專業人士信賴",
-                    card: { role: "執行長 & 創辦人", linkedin: "建立專業連結", instagram: "@_duckens_b", save: "0966161393", add: "手機", powered: "TapNet 提供技術支援" }
+                    card: { role: "共同創辦人 & 董事長", linkedin: "建立專業連結", instagram: "@_duckens_b", save: "0966161393", add: "手機", powered: "TapNet 提供技術支援" }
                 },
                 features: {
                     title_prefix: "不僅僅是一張",
@@ -606,26 +465,6 @@
                         { title: "客製化設計", desc: "完全客製化的個人檔案和卡片設計，完美匹配您的品牌形象。", icon: "pen-tool" }
                     ]
                 },
-                ai: {
-                    title_prefix: "您的個人",
-                    title_highlight: "AI 社交助手",
-                    sub: "TapNet 不僅分享您的資訊，還協助您建立形象。試試我們的 AI 工具來打造完美的個人簡介或開啟話題。",
-                    magic_bio: "魔法簡介",
-                    magic_bio_sub: "完善您的自我介紹",
-                    icebreaker: "破冰話題",
-                    icebreaker_sub: "不再冷場",
-                    bio_title: "生成您的簡介",
-                    job_label: "職稱",
-                    ind_label: "產業",
-                    vibe_label: "風格",
-                    vibes: { professional: "專業", witty: "幽默", casual: "隨性" },
-                    btn_bio: "生成簡介 ✨",
-                    ice_title: "社交破冰助手",
-                    event_label: "活動類型",
-                    target_label: "您想與誰交談？",
-                    btn_ice: "獲取建議 ✨",
-                    result_label: "AI 生成結果"
-                },
                 how: {
                     title_prefix: "輕鬆",
                     title_highlight: "建立連結",
@@ -634,7 +473,8 @@
                         { title: "啟用您的卡片", desc: "將卡片輕觸手機，立即將其連結到您的新檔案。" },
                         { title: "輕觸分享", desc: "開始社交。在任何智慧型手機上輕觸您的卡片，即可瞬間分享您的詳細資訊。" }
                     ],
-                    card_status: "狀態：連線成功"
+                    card_status: "狀態：連線成功",
+                    view_profile: "個人檔案"
                 },
                 cta: {
                     title_prefix: "準備好",
@@ -656,7 +496,6 @@
 
         // --- State ---
         let currentLang = 'en';
-        let aiBioVibe = 'professional';
 
         // --- Init ---
         document.addEventListener('DOMContentLoaded', () => {
@@ -694,79 +533,6 @@
             // Language Toggle
             document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
             document.getElementById('mobile-lang-toggle').addEventListener('click', toggleLanguage);
-
-            // AI Tab Switching
-            const tabBio = document.getElementById('tab-bio');
-            const tabIce = document.getElementById('tab-icebreaker');
-            const contentBio = document.getElementById('content-bio');
-            const contentIce = document.getElementById('content-icebreaker');
-
-            tabBio.addEventListener('click', () => {
-                tabBio.classList.add('bg-purple-600', 'text-white', 'shadow-lg', 'shadow-purple-900/50');
-                tabBio.classList.remove('text-neutral-400', 'hover:bg-white/5');
-                tabIce.classList.remove('bg-cyan-600', 'text-white', 'shadow-lg', 'shadow-cyan-900/50');
-                tabIce.classList.add('text-neutral-400', 'hover:bg-white/5');
-                
-                contentBio.classList.remove('hidden');
-                contentIce.classList.add('hidden');
-                document.getElementById('ai-result-container').classList.add('hidden');
-            });
-
-            tabIce.addEventListener('click', () => {
-                tabIce.classList.add('bg-cyan-600', 'text-white', 'shadow-lg', 'shadow-cyan-900/50');
-                tabIce.classList.remove('text-neutral-400', 'hover:bg-white/5');
-                tabBio.classList.remove('bg-purple-600', 'text-white', 'shadow-lg', 'shadow-purple-900/50');
-                tabBio.classList.add('text-neutral-400', 'hover:bg-white/5');
-
-                contentIce.classList.remove('hidden');
-                contentBio.classList.add('hidden');
-                document.getElementById('ai-result-container').classList.add('hidden');
-            });
-
-            // Vibe Buttons
-            const vibeBtns = document.querySelectorAll('.vibe-btn');
-            vibeBtns.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    aiBioVibe = e.target.getAttribute('data-value');
-                    vibeBtns.forEach(b => {
-                        b.className = 'vibe-btn px-4 py-2 rounded-lg text-sm border border-neutral-800 text-neutral-500 hover:border-neutral-600';
-                    });
-                    e.target.className = 'vibe-btn px-4 py-2 rounded-lg text-sm border bg-purple-500/20 border-purple-500 text-purple-300';
-                });
-            });
-
-            // Gemini API Calls
-            document.getElementById('btn-generate-bio').addEventListener('click', async () => {
-                const job = document.getElementById('bio-job').value;
-                const ind = document.getElementById('bio-industry').value;
-                if (!job || !ind) return;
-                
-                setLoading(true, 'btn-generate-bio');
-                const prompt = `Write a short, engaging, and ${aiBioVibe} professional bio (under 50 words) for a ${job} working in the ${ind} industry. Use emojis where appropriate. Output clean plain text without any markdown asterisks or bolding. Please answer in ${currentLang === 'en' ? 'English' : 'Traditional Chinese (Taiwan)'}.`;
-                
-                const text = await callGemini(prompt);
-                showResult(text);
-                setLoading(false, 'btn-generate-bio');
-            });
-
-            document.getElementById('btn-generate-ice').addEventListener('click', async () => {
-                const event = document.getElementById('ice-event').value;
-                const target = document.getElementById('ice-target').value;
-                if (!event) return;
-
-                setLoading(true, 'btn-generate-ice');
-                const prompt = `Give me 3 creative and effective networking icebreakers I can use at a ${event} to start a conversation with a ${target || 'stranger'}. Keep them friendly and confident. Output clean plain text without any markdown asterisks or bolding. Please answer in ${currentLang === 'en' ? 'English' : 'Traditional Chinese (Taiwan)'}.`;
-                
-                const text = await callGemini(prompt);
-                showResult(text);
-                setLoading(false, 'btn-generate-ice');
-            });
-
-            // Copy Button
-            document.getElementById('copy-btn').addEventListener('click', () => {
-                const text = document.getElementById('ai-result-text').innerText;
-                navigator.clipboard.writeText(text);
-            });
         });
 
         // --- Logic ---
@@ -830,58 +596,6 @@
                 `;
                 container.appendChild(div);
             });
-        }
-
-        const apiKey = ""; // Runtime provided
-
-        async function callGemini(prompt) {
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-            const delays = [1000, 2000, 4000];
-
-            for (let i = 0; i <= 3; i++) {
-                try {
-                    const response = await fetch(url, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            contents: [{ parts: [{ text: prompt }] }]
-                        })
-                    });
-
-                    if (!response.ok) throw new Error('API Error');
-                    const data = await response.json();
-                    return data.candidates?.[0]?.content?.parts?.[0]?.text || "No response generated.";
-                } catch (error) {
-                    if (i === 3) return "Our AI is currently brainstorming elsewhere. Please try again later!";
-                    await new Promise(resolve => setTimeout(resolve, delays[i]));
-                }
-            }
-        }
-
-        function setLoading(isLoading, btnId) {
-            const btn = document.getElementById(btnId);
-            const span = btn.querySelector('span');
-            if (isLoading) {
-                btn.disabled = true;
-                btn.classList.add('opacity-50', 'cursor-not-allowed');
-                // Replace content with spinner
-                const originalText = span.innerText;
-                btn.setAttribute('data-original-text', originalText);
-                span.innerHTML = `<i data-lucide="loader" class="animate-spin w-5 h-5"></i>`;
-                lucide.createIcons();
-            } else {
-                btn.disabled = false;
-                btn.classList.remove('opacity-50', 'cursor-not-allowed');
-                const originalText = btn.getAttribute('data-original-text');
-                span.innerText = originalText;
-            }
-        }
-
-        function showResult(text) {
-            const container = document.getElementById('ai-result-container');
-            const textEl = document.getElementById('ai-result-text');
-            textEl.innerText = text;
-            container.classList.remove('hidden');
         }
     </script>
 </body>
